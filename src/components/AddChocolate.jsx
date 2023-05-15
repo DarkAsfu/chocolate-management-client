@@ -11,6 +11,19 @@ const AddChocolate = () => {
         const photoURL = form.photo.value;
         const newChocolate =  {name, photoURL, country, category}
         console.log(newChocolate);
+
+        // send data to the server
+        fetch('http://localhost:5000/chocolates', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newChocolate)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
 
 
