@@ -16,7 +16,7 @@ const AddChocolate = () => {
         <div>
             <h1 className="py-4 text-5xl font-bold text-purple-600 text-center">Add Chocolates</h1>
 
-            <form onSubmit={handleAddChocolate}  className="max-w-md mx-auto">
+            <form onSubmit={handleAddChocolate}  className="w-2/3 mx-auto bg-slate-50 p-32">
                 <div className="mb-4">
                     <label htmlFor="name" className="block mb-2 font-bold text-gray-800">
                         Name:
@@ -61,7 +61,7 @@ const AddChocolate = () => {
                 </div>
                 <button
                     type="submit"
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-500"
+                    className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-500"
                 >
                     Add Chocolates
                 </button>
