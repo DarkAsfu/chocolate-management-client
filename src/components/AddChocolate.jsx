@@ -1,5 +1,5 @@
 
-
+import Swal from 'sweetalert2'
 const AddChocolate = () => {
 
     const handleAddChocolate = (e) =>{
@@ -23,6 +23,13 @@ const AddChocolate = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.insertedId){
+                Swal.fire(
+                    'Good job!',
+                    'Successfully added chocolate!',
+                    'success'
+                  )
+            }
         })
     }
 
