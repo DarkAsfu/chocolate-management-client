@@ -8,7 +8,9 @@ const AddChocolate = () => {
         const name = form.name.value;
         const country = form.country.value;
         const category = form.category.value;
-        console.log(name, country, category);
+        const photoURL = form.photo.value;
+        const newChocolate =  {name, photoURL, country, category}
+        console.log(newChocolate);
     }
 
 
@@ -16,7 +18,7 @@ const AddChocolate = () => {
         <div>
             <h1 className="py-4 text-5xl font-bold text-purple-600 text-center">Add Chocolates</h1>
 
-            <form onSubmit={handleAddChocolate}  className="w-2/3 mx-auto bg-slate-50 p-32">
+            <form onSubmit={handleAddChocolate}  className="w-10/12 md:w-2/3 mx-auto bg-slate-50 p-4 md:p-32">
                 <div className="mb-4">
                     <label htmlFor="name" className="block mb-2 font-bold text-gray-800">
                         Name:
@@ -27,6 +29,19 @@ const AddChocolate = () => {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-purple-500"
                         name="name"
                         placeholder="Enter chocolate name"
+                        
+                    />
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="name" className="block mb-2 font-bold text-gray-800">
+                        Photo:
+                    </label>
+                    <input
+                        type="text"
+                        id="photo"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-purple-500"
+                        name="photo"
+                        placeholder="Enter chocolate photo"
                         
                     />
                 </div>
@@ -61,7 +76,7 @@ const AddChocolate = () => {
                 </div>
                 <button
                     type="submit"
-                    className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-500"
+                    className="bg-purple-500 mt-6 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-500"
                 >
                     Add Chocolates
                 </button>
