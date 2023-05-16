@@ -1,15 +1,18 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ChocolateTable from "./components/ChocolateTable";
 import { useState } from "react";
-
+import { FcPlus } from "react-icons/fc";
 const App = () => {
   const loadedChocolate = useLoaderData();
   const [allChocolates, setAllChocolates ] = useState(loadedChocolate)
   console.log(loadedChocolate)
   return (
     <div>
-      <h1 className="py-4 text-5xl font-bold text-purple-600 text-center">Chocolate Management System {loadedChocolate.length}</h1>
-      <div className="container mx-auto p-6">
+      <h1 className="py-4 text-5xl font-bold text-purple-600 text-center">Chocolate Management System {allChocolates.length}</h1>
+      <div className="container mx-auto py-10">
+        <div className="w-10/12 mx-auto">
+        <Link to='/addChocolate'><button className="text-xl border px-6 py-4 mb-8 flex items-center gap-3"><FcPlus></FcPlus> New Chocolate</button></Link>
+        </div>
         <table className="md:w-10/12 mx-auto border bg-white">
           <thead style={{ background: 'radial-gradient(173.43% 182.1% at 50% 49.99%, rgba(220, 141, 72, 0.3) 0%, rgba(211, 135, 69, 0.3) 4.19%, rgba(145, 87, 43, 0.3) 36.95%, rgba(94, 49, 22, 0.3) 66.01%, rgba(63, 26, 10, 0.3) 87.87%, rgba(51, 17, 5, 0.3) 100%)' }}>
             <tr>

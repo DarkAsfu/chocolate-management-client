@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 const ChocolateTable = ({ chocolate, allChocolates, setAllChocolates }) => {
     console.log(allChocolates);
     const {name, photoURL, category, country, _id} = chocolate;
+    // chocolate deleting here
     const handleDelete = id =>{
         console.log(id);
         Swal.fire({
