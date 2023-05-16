@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import ChocolateTable from "./components/ChocolateTable";
+import { useState } from "react";
 
 const App = () => {
   const loadedChocolate = useLoaderData();
+  const [allChocolates, setAllChocolates ] = useState(loadedChocolate)
   console.log(loadedChocolate)
   return (
     <div>
@@ -30,7 +32,7 @@ const App = () => {
           </thead>
           <tbody className="divide-y divide-gray-200">
             {
-              loadedChocolate.map(chocolate => <ChocolateTable key={chocolate._id} chocolate={chocolate}></ChocolateTable>)
+              allChocolates.map(chocolate => <ChocolateTable key={chocolate._id} chocolate={chocolate} allChocolates={allChocolates} setAllChocolates={setAllChocolates}></ChocolateTable>)
             }
           </tbody>
         </table>
