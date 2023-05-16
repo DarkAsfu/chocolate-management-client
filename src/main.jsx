@@ -19,8 +19,9 @@ const router = createBrowserRouter([
     element: <AddChocolate></AddChocolate>
   },
   {
-    path: "/updateChocolate",
-    element: <UpadateChocolate></UpadateChocolate>
+    path: "/updateChocolate/:id",
+    element: <UpadateChocolate></UpadateChocolate>,
+    loader: ({params}) => fetch(`http://localhost:5000/chocolates/${params.id}`)
   }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

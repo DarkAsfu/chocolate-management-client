@@ -1,4 +1,5 @@
 import { RxPencil1, RxCross1 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ChocolateTable = ({ chocolate, allChocolates, setAllChocolates }) => {
@@ -53,7 +54,7 @@ const ChocolateTable = ({ chocolate, allChocolates, setAllChocolates }) => {
                     {category}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap flex gap-4">
-                    <RxPencil1 className="p-3 text-5xl rounded" style={{color: '#774320', background: 'linear-gradient(90.74deg, rgba(119, 67, 32, 0.15) 0.16%, rgba(232, 197, 128, 0.15) 100%)'}}></RxPencil1>
+                    <Link to={`updateChocolate/${_id}`}><RxPencil1 className="p-3 text-5xl rounded" style={{color: '#774320', background: 'linear-gradient(90.74deg, rgba(119, 67, 32, 0.15) 0.16%, rgba(232, 197, 128, 0.15) 100%)'}}></RxPencil1></Link>
                     <RxCross1 onClick={() => handleDelete(_id)} className="p-3 text-5xl rounded" style={{color: '#774320', background: 'linear-gradient(90.74deg, rgba(119, 67, 32, 0.15) 0.16%, rgba(232, 197, 128, 0.15) 100%)'}}></RxCross1>
                 </td>
             </tr>
